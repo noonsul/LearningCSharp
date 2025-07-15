@@ -16,7 +16,8 @@ namespace LearningCSharp1
             {
                 Console.WriteLine("Hello! What would you like to do?");
                 Console.WriteLine("1 - FizzBuzz");
-                Console.WriteLine("2 - Other");
+                Console.WriteLine("2 - Is Prime?");
+                Console.WriteLine("3 - Other");
 
                 string input = Console.ReadLine();
 
@@ -46,9 +47,14 @@ namespace LearningCSharp1
             }
             else if (choice == 2)
             {
+                // Call Is Prime Input Checker
+                NumberHelper.IsPrime_InputChecker();
+            }
+            else if (choice == 3)
+            {
                 // Call Other
             }
-        
+
             Console.ReadLine();
         }
 

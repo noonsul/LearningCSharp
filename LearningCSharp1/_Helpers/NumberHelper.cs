@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace LearningCSharp1
 {
     public static class NumberHelper
     {
+        const string message_loading = "...processing";
+
+
         public static string FizzBuzz(int number)
         {
             /*
@@ -46,7 +50,7 @@ namespace LearningCSharp1
                 Console.Write("***FizzBuzz***\n Enter a Number you want to play: ");
                 string input_FizzBuzz = Console.ReadLine();
 
-                bool isValid_input_FizzBuzz =  = int.TryParse(input_FizzBuzz, out int number_FizzBuzz) && number_FizzBuzz > 0;
+                bool isValid_input_FizzBuzz = int.TryParse(input_FizzBuzz, out int number_FizzBuzz) && number_FizzBuzz > 0;
 
 
                 if (isValid_input_FizzBuzz)
@@ -66,7 +70,7 @@ namespace LearningCSharp1
 
         }
 
-        public static string IsPrime (int number)
+        public static void IsPrime_InputChecker ()
         {
             /* 
              * Ask Input - One number
@@ -80,23 +84,66 @@ namespace LearningCSharp1
                 Console.Write("For Prime Number Testing, Enter the Number to Test: ");
                 string input_PrimeNumber = Console.ReadLine();
 
-                bool isValid_input_PrimeNumber = int.TryParse(IsPrime(number), out int number_PrimeNumber) && number_PrimeNumber > 0;
+                bool isValid_input_PrimeNumber = int.TryParse(input_PrimeNumber, out int number_PrimeNumber) && number_PrimeNumber > 1;
 
                 if (isValid_input_PrimeNumber)
                 {
-                    // Check if the number is prime or not, and return the result
-                    bool result_isPrime = false;
-                    string postResult_isPrime;
+                    // Call the Is Prime Method here.
+                    IsPrime(number_PrimeNumber);
+                    break;
+                }
+              
+                else
+                {
+                    Console.WriteLine("Please enter a vaild number.");
+                }
 
-                    if 
+            }
+        }
+
+        public static bool IsPrime (int numberToTest_IsPrime)
+        {
+            for (int i = 0; i < message_loading.Length; i++)
+            {
+                Console.Write(message_loading[i]);
+                Thread.Sleep(250);
+                
+            }
+            Console.WriteLine();
+
+            // Check if the number is prime or not, and return the result
+            double sqrt_value = Math.Sqrt(Convert.ToDouble(numberToTest_IsPrime));
+            int sqrt_value_int = Convert.ToInt32(sqrt_value);
+            //Console.WriteLine($"sqrt_value: {sqrt_value_int.ToString()}");//debugging only
+            Console.WriteLine();
+            bool isPrimeNumber = true;
+
+            for (int i = 2; i <= sqrt_value_int; i++)
+            {
+                //Console.WriteLine($"i: {i}");//debugging only
+                
+                int remainder = numberToTest_IsPrime % i;
+                //Console.WriteLine($"{numberToTest_IsPrime} % {i} = {remainder}");//debugging only
+                if (remainder == 0)
+                {
+                    isPrimeNumber = false;
 
                 }
-                else
 
             }
 
-
-
+            if (isPrimeNumber)
+            {
+                string postResult_isPrime = $"{numberToTest_IsPrime} is a Prime Number.";
+                Console.WriteLine(postResult_isPrime);
+                return true;
+            }
+            else
+            {
+                string postResult_isPrime = $"{numberToTest_IsPrime} is NOT a Prime Number.";
+                Console.WriteLine(postResult_isPrime);
+                return false;
+            }
         }
     }
 }

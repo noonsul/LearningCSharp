@@ -62,5 +62,43 @@ namespace LearningCSharp.Tests
         }
     }
 
-    
+    /*
+    [TestClass]
+    public class IsPrime_TEsts
+    {
+        [TestMethod]
+        public void Test_IsPrime_NonPrimeNumbers()
+        {
+            Assert.IsFalse(NumberHelper.IsPrime(9));
+
+        }
+
+        [TestMethod]
+        public void Test_IsPrime_PrimeNumbersOnly()
+        {
+            Assert.AreEqual("Fizz", NumberHelper.FizzBuzz(3));
+            Assert.AreEqual("Fizz", NumberHelper.FizzBuzz(6));
+            Assert.AreEqual("Fizz", NumberHelper.FizzBuzz(9));
+            Assert.AreEqual("Fizz", NumberHelper.FizzBuzz(12));
+            Assert.AreEqual("Fizz", NumberHelper.FizzBuzz(18));
+        }
+
+        [TestMethod]
+        public void Test_IsPrime_Zero()
+        {
+            Assert.AreEqual("FizzBuzz", NumberHelper.FizzBuzz(0));
+        }
+
+        [TestMethod]
+        public void Test_IsPrime_NegativeNumbers()
+        {
+            Assert.AreEqual("-1", NumberHelper.FizzBuzz(-1));
+            Assert.AreEqual("-2", NumberHelper.FizzBuzz(-2));
+            Assert.AreEqual("Fizz", NumberHelper.FizzBuzz(-3));
+            Assert.AreEqual("Buzz", NumberHelper.FizzBuzz(-5));
+            Assert.AreEqual("FizzBuzz", NumberHelper.FizzBuzz(-15));
+        }
+    }
+    */
+
 }
