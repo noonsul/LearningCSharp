@@ -88,6 +88,14 @@ namespace LearningCSharp1
 
                 if (isValid_input_PrimeNumber)
                 {
+                    for (int i = 0; i < message_loading.Length; i++)
+                    {
+                        Console.Write(message_loading[i]);
+                        Thread.Sleep(250);
+
+                    }
+                    Console.WriteLine();
+                    
                     // Call the Is Prime Method here.
                     IsPrime(number_PrimeNumber);
                     break;
@@ -103,13 +111,14 @@ namespace LearningCSharp1
 
         public static bool IsPrime (int numberToTest_IsPrime)
         {
+            /*
             for (int i = 0; i < message_loading.Length; i++)
             {
                 Console.Write(message_loading[i]);
                 Thread.Sleep(250);
                 
             }
-            Console.WriteLine();
+            Console.WriteLine();*/
 
             // Check if the number is prime or not, and return the result
             double sqrt_value = Math.Sqrt(Convert.ToDouble(numberToTest_IsPrime));
