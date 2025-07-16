@@ -62,43 +62,40 @@ namespace LearningCSharp.Tests
         }
     }
 
-    /*
+    
     [TestClass]
-    public class IsPrime_TEsts
+    public class IsPrime_Tests
     {
         [TestMethod]
         public void Test_IsPrime_NonPrimeNumbers()
         {
+            Assert.IsFalse(NumberHelper.IsPrime(1));
+            Assert.IsFalse(NumberHelper.IsPrime(4));
+            Assert.IsFalse(NumberHelper.IsPrime(6));
+            Assert.IsFalse(NumberHelper.IsPrime(8));
             Assert.IsFalse(NumberHelper.IsPrime(9));
-
+            Assert.IsFalse(NumberHelper.IsPrime(10));
         }
 
         [TestMethod]
         public void Test_IsPrime_PrimeNumbersOnly()
         {
-            Assert.AreEqual("Fizz", NumberHelper.FizzBuzz(3));
-            Assert.AreEqual("Fizz", NumberHelper.FizzBuzz(6));
-            Assert.AreEqual("Fizz", NumberHelper.FizzBuzz(9));
-            Assert.AreEqual("Fizz", NumberHelper.FizzBuzz(12));
-            Assert.AreEqual("Fizz", NumberHelper.FizzBuzz(18));
+            Assert.IsTrue(NumberHelper.IsPrime(2));
+            Assert.IsTrue(NumberHelper.IsPrime(3));
+            Assert.IsTrue(NumberHelper.IsPrime(5));
+            Assert.IsTrue(NumberHelper.IsPrime(7));
+            Assert.IsTrue(NumberHelper.IsPrime(11));
+            Assert.IsTrue(NumberHelper.IsPrime(13));
         }
 
         [TestMethod]
-        public void Test_IsPrime_Zero()
+        public void Test_IsPrime_ZeroOrNegative()
         {
-            Assert.AreEqual("FizzBuzz", NumberHelper.FizzBuzz(0));
-        }
-
-        [TestMethod]
-        public void Test_IsPrime_NegativeNumbers()
-        {
-            Assert.AreEqual("-1", NumberHelper.FizzBuzz(-1));
-            Assert.AreEqual("-2", NumberHelper.FizzBuzz(-2));
-            Assert.AreEqual("Fizz", NumberHelper.FizzBuzz(-3));
-            Assert.AreEqual("Buzz", NumberHelper.FizzBuzz(-5));
-            Assert.AreEqual("FizzBuzz", NumberHelper.FizzBuzz(-15));
+            Assert.IsFalse(NumberHelper.IsPrime(0));
+            Assert.IsFalse(NumberHelper.IsPrime(-1));
+            Assert.IsFalse(NumberHelper.IsPrime(-100));
+            Assert.IsFalse(NumberHelper.IsPrime(-57));
         }
     }
-    */
 
 }
