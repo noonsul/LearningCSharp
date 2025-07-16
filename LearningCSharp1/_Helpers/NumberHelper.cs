@@ -100,7 +100,16 @@ namespace LearningCSharp1
                     IsPrime(number_PrimeNumber);
                     break;
                 }
-              
+                else if (number_PrimeNumber == 1)
+                {
+                    Console.WriteLine($"{number_PrimeNumber} is Not a Prime Number.");
+                    break;
+                }
+                else if (number_PrimeNumber == 0)
+                {
+                    Console.WriteLine($"{number_PrimeNumber} is neither a Prime nor Composite Number.");
+                    break;
+                }
                 else
                 {
                     Console.WriteLine("Please enter a vaild number.");
@@ -119,7 +128,7 @@ namespace LearningCSharp1
             bool isPrimeNumber = true;
 
             //Issue#1: Skip checking even numbers
-            if (numberToTest_IsPrime % 2 != 0)
+            if (numberToTest_IsPrime % 2 == 0 && numberToTest_IsPrime != 2)
             {
                 isPrimeNumber = false;
             }
