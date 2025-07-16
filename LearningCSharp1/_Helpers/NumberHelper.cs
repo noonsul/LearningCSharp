@@ -111,15 +111,6 @@ namespace LearningCSharp1
 
         public static bool IsPrime (int numberToTest_IsPrime)
         {
-            /*
-            for (int i = 0; i < message_loading.Length; i++)
-            {
-                Console.Write(message_loading[i]);
-                Thread.Sleep(250);
-                
-            }
-            Console.WriteLine();*/
-
             // Check if the number is prime or not, and return the result
             double sqrt_value = Math.Sqrt(Convert.ToDouble(numberToTest_IsPrime));
             int sqrt_value_int = Convert.ToInt32(sqrt_value);
@@ -127,19 +118,27 @@ namespace LearningCSharp1
             Console.WriteLine();
             bool isPrimeNumber = true;
 
-            for (int i = 2; i <= sqrt_value_int; i++)
+            //Issue#1: Skip checking even numbers
+            if (numberToTest_IsPrime % 2 != 0)
             {
-                //Console.WriteLine($"i: {i}");//debugging only
-                
-                int remainder = numberToTest_IsPrime % i;
-                //Console.WriteLine($"{numberToTest_IsPrime} % {i} = {remainder}");//debugging only
-                if (remainder == 0)
+                isPrimeNumber = false;
+            }
+            else
+            {
+                for (int i = 2; i <= sqrt_value_int; i++)
                 {
-                    isPrimeNumber = false;
+                    //Console.WriteLine($"i: {i}");//debugging only
+
+                    int remainder = numberToTest_IsPrime % i;
+                    //Console.WriteLine($"{numberToTest_IsPrime} % {i} = {remainder}");//debugging only
+                    if (remainder == 0)
+                    {
+                        isPrimeNumber = false;
+
+                    }
 
                 }
-
-            }
+            }            
 
             if (isPrimeNumber)
             {
