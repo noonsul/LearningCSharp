@@ -119,7 +119,7 @@ namespace LearningCSharp1
             bool isPrimeNumber = true;
 
             //Issue#1: Skip checking even numbers
-            if (numberToTest_IsPrime % 2 != 0)
+            if (numberToTest_IsPrime % 2 == 0 && numberToTest_IsPrime != 2)
             {
                 isPrimeNumber = false;
             }
