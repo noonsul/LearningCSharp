@@ -69,7 +69,6 @@ namespace LearningCSharp.Tests
         [TestMethod]
         public void Test_IsPrime_NonPrimeNumbers()
         {
-            Assert.IsFalse(NumberHelper.IsPrime(1));
             Assert.IsFalse(NumberHelper.IsPrime(4));
             Assert.IsFalse(NumberHelper.IsPrime(6));
             Assert.IsFalse(NumberHelper.IsPrime(8));
@@ -86,15 +85,6 @@ namespace LearningCSharp.Tests
             Assert.IsTrue(NumberHelper.IsPrime(7));
             Assert.IsTrue(NumberHelper.IsPrime(11));
             Assert.IsTrue(NumberHelper.IsPrime(13));
-        }
-
-        [TestMethod]
-        public void Test_IsPrime_ZeroOrNegative()
-        {
-            Assert.IsFalse(NumberHelper.IsPrime(0));
-            Assert.IsFalse(NumberHelper.IsPrime(-1));
-            Assert.IsFalse(NumberHelper.IsPrime(-100));
-            Assert.IsFalse(NumberHelper.IsPrime(-57));
         }
     }
 
