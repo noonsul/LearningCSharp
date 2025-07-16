@@ -100,7 +100,16 @@ namespace LearningCSharp1
                     IsPrime(number_PrimeNumber);
                     break;
                 }
-              
+                else if (number_PrimeNumber == 1)
+                {
+                    Console.WriteLine($"{number_PrimeNumber} is Not a Prime Number.");
+                    break;
+                }
+                else if (number_PrimeNumber == 0)
+                {
+                    Console.WriteLine($"{number_PrimeNumber} is neither a Prime nor Composite Number.");
+                    break;
+                }
                 else
                 {
                     Console.WriteLine("Please enter a vaild number.");
