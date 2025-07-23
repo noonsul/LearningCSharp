@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LearningCSharp1._Helpers;
 
 namespace LearningCSharp1
 {
@@ -14,17 +15,18 @@ namespace LearningCSharp1
 
             while (true)
             {
-                Console.WriteLine("Hello! What would you like to do?");
+                Console.WriteLine("Hello! What would you like to Test?");
                 Console.WriteLine("1 - FizzBuzz");
                 Console.WriteLine("2 - Is Prime?");
-                Console.WriteLine("3 - Other");
+                Console.WriteLine("3 - Password Checker");
+                Console.WriteLine("0 - Exit the program");
 
                 string input = Console.ReadLine();
 
                 if (int.TryParse(input, out choice)) //If successfully converted the string input to choice number (int)
                 {
                     // Check the Choice number to see if any of the given options is chosen.
-                    if (choice == 1 || choice == 2)
+                    if (choice == 1 || choice == 2 || choice == 3)
                     {
                         break; // If so, exit the user prompt loop
                     }
@@ -52,7 +54,8 @@ namespace LearningCSharp1
             }
             else if (choice == 3)
             {
-                // Call Other
+                // Call Password Checker
+                SecurityHelper.PasswordChecker();
             }
 
             Console.ReadLine();
